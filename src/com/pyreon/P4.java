@@ -1,5 +1,7 @@
 package com.pyreon;
 
+import static com.pyreon.Library.isPalindrome;
+
 /**
  * Largest palindrome product
  *
@@ -21,14 +23,5 @@ public class P4 {
         }
         System.out.printf("largest palindrome product : %d", largest);
     }
-    public static boolean isPalindrome (long palindromeToCheck){
-        return isPalindrome(String.valueOf(palindromeToCheck));
-    }
 
-    public static boolean isPalindrome (String palindromeToCheck){
-        for (int i = 0; i < palindromeToCheck.length(); i++) {
-            if(palindromeToCheck.charAt(i) != palindromeToCheck.charAt(palindromeToCheck.length()-(i+1))) return false;
-        }
-        return true;
-    }
 }
