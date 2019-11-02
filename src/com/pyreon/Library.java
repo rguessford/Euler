@@ -3,6 +3,7 @@ package com.pyreon;
 import java.lang.reflect.Array;
 import java.time.chrono.Era;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Library {
 
@@ -33,22 +34,9 @@ public class Library {
         return true;
     }
 
-    /**
-     * @deprecated
-     * naiive method. takes too long.
-     */
-    @Deprecated
-    public static int countDivisors(int dividend){
-        int count = 0;
-        for (int i = 1; i <= dividend ; i++) {
-            if(dividend % i == 0) count++;
-        }
-        return count;
-    }
-
     public static ArrayList<Long> primeFactorization (long num){
         ArrayList<Long> factorization = new ArrayList<>();
-        for(long i = 2; i < num; i++){
+        for(long i = 2; i <= num; i++){
             while( num % i == 0){
                 factorization.add(i);
                 num /= i;
@@ -57,7 +45,18 @@ public class Library {
         return factorization;
     }
 
-    public static void main(String[] args) {
+    public static long countDivisors(long num){
+        ArrayList<Long> primeFactorization = primeFactorization(num);
+        HashMap<Long, Long> map = new HashMap<>();
 
+        for(Long _num : primeFactorization){
+            Long count = map.getOrDefault(_num, 0L);
+            map.put(_num, count+1);
+        }
+        return map.values().stream().map(x -> x+1).reduce(1L, (acc, x) -> acc*x);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(countDivisors(76564125L));
     }
 }

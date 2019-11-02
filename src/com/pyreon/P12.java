@@ -23,5 +23,15 @@ package com.pyreon;
  */
 public class P12 {
     public static void main(String[] args) {
+        int triangularNum = 1;
+        int count = 2;
+        while(true){
+            long divisors = Library.countDivisors(triangularNum);
+            System.out.println(triangularNum + " " + divisors);
+            triangularNum += count;
+            count++;
+            if (divisors > 500) break;
+        }
+
     }
 }
