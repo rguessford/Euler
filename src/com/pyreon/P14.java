@@ -23,7 +23,6 @@ public class P14 {
         long longestcollatzlength = 0;
         long longestcollatzinput = 1;
         for (long i = 1; i < 1000000; i++) {
-            System.out.println(i);
             long length = collatzSequenceLength(i);
             if(length > longestcollatzlength){
                 longestcollatzlength = length;

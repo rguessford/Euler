@@ -27,11 +27,10 @@ public class P12 {
         int count = 2;
         while(true){
             long divisors = Library.countDivisors(triangularNum);
-            System.out.println(triangularNum + " " + divisors);
+            if (divisors > 500) break;
             triangularNum += count;
             count++;
-            if (divisors > 500) break;
         }
-
+        System.out.println(triangularNum);
     }
 }
