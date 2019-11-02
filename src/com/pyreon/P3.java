@@ -1,5 +1,7 @@
 package com.pyreon;
 
+import java.util.ArrayList;
+
 /**
  * Largest prime factor
  *
@@ -10,14 +12,8 @@ package com.pyreon;
  */
 public class P3 {
     public static void main(String[] args) {
-        long largest = 0;
         long num = 600851475143L;
-        for(long i = 2; i < num; i++){
-            while( num % i == 0){
-                System.out.println(num);
-                num /= i;
-            }
-        }
-        System.out.println(num);
+        ArrayList<Long> factorization = Library.primeFactorization(num);
+        System.out.println(factorization.get(factorization.size()-1));
     }
 }
