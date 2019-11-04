@@ -1,9 +1,8 @@
 package com.pyreon;
 
-import java.lang.reflect.Array;
-import java.time.chrono.Era;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Library {
 
@@ -124,9 +123,26 @@ public class Library {
         return res.toString();
     }
 
-    public static void main(String[] args) {
-        for (int i = 1; i < 1001; i++) {
-            System.out.println(asWord(i));
+    public static HashSet<Long> findProperDivisors(long num) {
+        ArrayList<Long> factorization = primeFactorization(num);
+        HashSet<Long> divisors = new HashSet<>();
+        divisors.add(1L);
+        long combinations = Math.round(Math.pow(2, factorization.size()));
+        for (int i = 1; i < combinations; i++) {
+            int index=0;
+            long divisor = 1;
+            for(int j=i; j > 0; j = j>>1, index++){
+                if((j & 1) == 1){
+                    divisor *= factorization.get(index);
+                }
+            }
+            divisors.add(divisor);
         }
+        divisors.remove(num);
+        return divisors;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(findProperDivisors(1000));
     }
 }
