@@ -44,6 +44,13 @@ public class Library {
         return factorization;
     }
 
+    /**
+     * finds the total number of divisors of a number by taking the multiplicity of each prime factor, adding one to it,
+     * and multiplying them all together.
+     *
+     * @param num the number to analyze
+     * @return the number of divisors of num
+     */
     public static long countDivisors(long num){
         ArrayList<Long> primeFactorization = primeFactorization(num);
         HashMap<Long, Long> map = new HashMap<>();
@@ -143,6 +150,7 @@ public class Library {
     }
 
     public static void main(String[] args) {
-        System.out.println(findProperDivisors(1000));
+
+        System.out.println(findProperDivisors(4));
     }
 }
