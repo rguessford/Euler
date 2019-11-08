@@ -1,4 +1,6 @@
-package com.pyreon;
+package com.pyreon.completed;
+
+import com.pyreon.util.TriangularArray;
 
 /**
  * Maximum path sum I

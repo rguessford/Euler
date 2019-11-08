@@ -1,6 +1,4 @@
-package com.pyreon;
-
-import java.util.Arrays;
+package com.pyreon.completed;
 
 /**
  * Largest product in a series
@@ -58,12 +56,9 @@ public class P8 {
         for (int i = 0; i < 1000-13; i++) {
             num.getChars(i, i+13, set, 0);
             long accumulator = 1;
-            System.out.println();
-            for (int j = 0; j < set.length; j++) {
-                accumulator *= Character.getNumericValue(set[j]);
-                System.out.print(Character.getNumericValue(set[j]));
+            for(char c : set){
+                accumulator *= Character.getNumericValue(c);
             }
-            System.out.println("\n"+ accumulator);
             largest = Math.max(accumulator, largest);
         }
         System.out.println(largest);

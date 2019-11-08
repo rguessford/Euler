@@ -1,4 +1,4 @@
-package com.pyreon;
+package com.pyreon.util;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -102,7 +102,7 @@ public class Library {
         dictionary.put(90,"ninety");
         dictionary.put(100,"hundred");
         dictionary.put(1000,"thousand");
-        StringBuilder res = new StringBuilder("");
+        StringBuilder res = new StringBuilder();
         boolean noAnd = false;
         if(num%100 == 0) noAnd = true;
         if(num % 100 > 9 && num % 100 < 20){

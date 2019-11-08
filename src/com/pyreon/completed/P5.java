@@ -1,4 +1,4 @@
-package com.pyreon;
+package com.pyreon.completed;
 
 /**
  * Smallest multiple

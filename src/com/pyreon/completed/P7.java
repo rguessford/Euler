@@ -1,6 +1,6 @@
-package com.pyreon;
+package com.pyreon.completed;
 
-import static com.pyreon.Library.isPrime;
+import com.pyreon.util.Eratosthenes;
 
 /**
  * 10001st prime
@@ -12,12 +12,13 @@ import static com.pyreon.Library.isPrime;
  */
 public class P7 {
     public static void main(String[] args) {
+        Eratosthenes era = Eratosthenes.getInstance(5000000);
         long answer = 0;
         long current = 0;
         for (int i = 1; i < 10002; i++) {
-            while(!isPrime(current))current++;
+            while(!era.isPrime(current))current++;
             System.out.printf("the %d prime is %d%n", i, current);
-            if (i == 10001 && isPrime(current)) answer = current;
+            if (i == 10001 && era.isPrime(current)) answer = current;
             current++;
         }
         System.out.println(answer);

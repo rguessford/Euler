@@ -1,9 +1,9 @@
-package com.pyreon;
+package com.pyreon.completed;
+
+import com.pyreon.util.Library;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
-import java.util.SortedSet;
 
 /**
  * Non-abundant sums

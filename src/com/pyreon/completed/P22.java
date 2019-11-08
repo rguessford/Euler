@@ -1,9 +1,8 @@
-package com.pyreon;
+package com.pyreon.completed;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.stream.Collectors;
 
 public class P22 {
@@ -12,8 +11,7 @@ public class P22 {
         try{
             nameReader = new BufferedReader( new FileReader(new File("src/res/p022_names.txt")));
             String[] names = nameReader.readLine().split(",");
-            ArrayList <String> namelist = Arrays.stream(names).map(x -> x.replace("\"", "")).collect(Collectors.toCollection(ArrayList::new));
-            namelist.sort(Comparator.naturalOrder());
+            ArrayList <String> namelist = Arrays.stream(names).sorted().map(x -> x.replace("\"", "")).collect(Collectors.toCollection(ArrayList::new));
             long accumulatorTotal = 0;
             for (int i = 0; i < namelist.size(); i++) {
                 long accumulatorNameScore = 0;

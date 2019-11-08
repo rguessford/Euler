@@ -1,4 +1,4 @@
-package com.pyreon;
+package com.pyreon.completed;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -214,8 +214,8 @@ public class P13 {
         nums.add(new BigInteger("20849603980134001723930671666823555245252804609722"));
         nums.add(new BigInteger("53503534226472524250874054075591789781264330331690"));
         BigInteger accumulator = BigInteger.ZERO;
-        for (int i = 0; i < nums.size(); i++) {
-            accumulator = accumulator.add(nums.get(i));
+        for (BigInteger num : nums) {
+            accumulator = accumulator.add(num);
         }
         System.out.println(accumulator);
     }

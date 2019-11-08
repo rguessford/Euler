@@ -1,6 +1,6 @@
-package com.pyreon;
+package com.pyreon.completed;
 
-import static com.pyreon.Library.isPalindrome;
+import static com.pyreon.util.Library.isPalindrome;
 
 /**
  * Largest palindrome product

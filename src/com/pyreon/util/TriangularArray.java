@@ -1,4 +1,4 @@
-package com.pyreon;
+package com.pyreon.util;
 
 public class TriangularArray {
     public int rows;
