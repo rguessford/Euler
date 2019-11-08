@@ -1,6 +1,7 @@
 package com.pyreon.util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -68,6 +69,21 @@ public class Library {
             accumulator += Character.getNumericValue(number.charAt(i));
         }
         return accumulator;
+    }
+    public static int[] splitDigits(int num){
+        int digitCounter = 0;
+        for (int i = 10; num/i != 0 ; i*=10) {
+            digitCounter++;
+        }
+        int[] result = new int[digitCounter+1];
+
+        //ordered most > least significant
+        for (int i = result.length - 1; i >= 0 ; i--) {
+            result[i] = num % 10;
+            num /= 10;
+        }
+
+        return result;
     }
 
     public static String asWord(int num){
@@ -150,7 +166,6 @@ public class Library {
     }
 
     public static void main(String[] args) {
-
-        System.out.println(findProperDivisors(4));
+        System.out.println(Arrays.toString(splitDigits(123456)));
     }
 }
