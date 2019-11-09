@@ -1,6 +1,4 @@
-package com.pyreon;
-
-import java.util.Arrays;
+package com.pyreon.completed;
 
 /**
  *In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:

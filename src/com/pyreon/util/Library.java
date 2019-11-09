@@ -15,6 +15,7 @@ public class Library {
         for (int i = 0; i < palindromeToCheck.length(); i++) {
             if(palindromeToCheck.charAt(i) != palindromeToCheck.charAt(palindromeToCheck.length()-(i+1))) return false;
         }
+        
         return true;
     }
 
